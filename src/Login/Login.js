@@ -4,11 +4,12 @@ import { useContext } from "react";
 import Button from "react-bootstrap/Button";
 import Form from "react-bootstrap/Form";
 import { FaGithub, FaGoogle } from "react-icons/fa";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { AuthContext } from "../contexts/AuthProvider";
 
 const Login = () => {
   const { providerLogin, login } = useContext(AuthContext);
+  const navigate = useNavigate();
 
   const googleProvider = new GoogleAuthProvider();
 
@@ -22,6 +23,8 @@ const Login = () => {
       .then((result) => {
         const user = result.user;
         console.log(user);
+        form.reset();
+        navigate('/courses')
       })
       .catch((error) => console.error(error));
   }
@@ -31,6 +34,7 @@ const Login = () => {
       .then((result) => {
         const user = result.user;
         console.log(user);
+        navigate('/courses')
       })
       .catch((error) => console.error(error));
   };
