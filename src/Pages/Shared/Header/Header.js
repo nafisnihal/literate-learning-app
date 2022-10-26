@@ -1,12 +1,24 @@
 import React from "react";
-import { Button } from "react-bootstrap";
+import { useContext } from "react";
+import { Button, Image } from "react-bootstrap";
 import Container from "react-bootstrap/Container";
 import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
 import { Link } from "react-router-dom";
 import logo from "../../../Assets/Images/logo.png";
+import { AuthContext } from "../../../contexts/AuthProvider";
+import { FaUserAlt } from "react-icons/fa";
+import { HiOutlineChevronDoubleRight } from "react-icons/hi";
 
 const Header = () => {
+  const { user, logOut } = useContext(AuthContext);
+
+  const handleLogOut = () => {
+    logOut()
+      .then(() => {})
+      .catch((error) => console.error(error));
+  };
+
   return (
     <Navbar
       className="py-2"
@@ -44,16 +56,39 @@ const Header = () => {
             </Link>
           </Nav>
           <Nav className="d-sm-flex justify-content-end">
-            <Link>
-              <Button className="me-lg-2 mb-2 mb-lg-0" variant="outline-light">
-                Login
+            {user?.photoURL ? (
+              <Image
+                className="mx-2 my-auto"
+                style={{ height: "30px" }}
+                rounded
+                fluid
+                src={user?.photoURL}
+              ></Image>
+            ) : (
+              <FaUserAlt className="text-light mx-2 my-auto p-1 fs-2 border rounded"></FaUserAlt>
+            )}
+            {user?.uid ? (
+              <Button onClick={handleLogOut} variant="light">
+                Logout{" "}
+                <HiOutlineChevronDoubleRight></HiOutlineChevronDoubleRight>
               </Button>
-            </Link>
-            <Link>
-              <Button className="" variant="light">
-                Sign Up
-              </Button>
-            </Link>
+            ) : (
+              <>
+                <Link to="/login">
+                  <Button
+                    className="me-lg-2 mb-2 mb-lg-0"
+                    variant="outline-light"
+                  >
+                    Login
+                  </Button>
+                </Link>
+                <Link to="/register">
+                  <Button className="" variant="light">
+                    Sign Up
+                  </Button>
+                </Link>
+              </>
+            )}
           </Nav>
         </Navbar.Collapse>
       </Container>
