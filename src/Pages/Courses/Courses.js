@@ -8,11 +8,11 @@ const Courses = () => {
       <div>
         <Container>
           <Row className='mt-5'>
-            <Col lg="10">
-                <Outlet></Outlet>
-            </Col>
             <Col lg="2">
               <SideNav></SideNav>
+            </Col>
+            <Col lg="10">
+                <Outlet></Outlet>
             </Col>
           </Row>
         </Container>

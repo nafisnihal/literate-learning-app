@@ -14,32 +14,39 @@ const Header = () => {
       expand="lg"
       bg="dark"
       variant="dark"
+      sticky="top"
     >
       <Container>
         <Navbar.Brand className="m-0 p-0" href="#home">
-          <img
-            width="80"
-            height=""
-            src={logo}
-            alt="Literate"
-            className="p-0 m-0 fw-bold"
-          />
+          <Link to="/">
+            <img
+              width="80"
+              height=""
+              src={logo}
+              alt="Literate"
+              className="p-0 m-0 fw-bold"
+            />
+          </Link>
         </Navbar.Brand>
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
         <Navbar.Collapse id="responsive-navbar-nav">
           <Nav className="me-auto">
-            <Link className="text-decoration-none me-3 text-light" to="/">
-              HOME
-            </Link>
-            <Link className="text-decoration-none me-3 text-light" to="/courses">
+            <Link
+              className="text-decoration-none me-lg-3 text-light mt-3 mt-lg-0 text-end"
+              to="/courses"
+            >
               COURSES
             </Link>
-            <Link className="text-decoration-none me-3 text-light">FAQ</Link>
-            <Link className="text-decoration-none text-light">BLOG</Link>
+            <Link className="text-decoration-none me-lg-3 text-light mt-3 mt-lg-0 text-end">
+              FAQ
+            </Link>
+            <Link className="text-decoration-none text-light mt-3 mt-lg-0 text-end">
+              BLOG
+            </Link>
           </Nav>
-          <Nav>
+          <Nav className="d-sm-flex justify-content-end">
             <Link>
-              <Button className="me-2 mb-sm-2 mb-lg-0" variant="outline-light">
+              <Button className="me-lg-2 mb-2 mb-lg-0" variant="outline-light">
                 Login
               </Button>
             </Link>

@@ -15,15 +15,15 @@ const SideNav = () => {
     } ,[])
 
     return (
-      <div>
-        <h3 className="text-center text-light border rounded border-dark p-2 w-auto mb-3 bg-dark">
+      <div className="mb-5">
+        <h3 className="text-center text-light border rounded border-dark p-4 w-auto mb-3 bg-dark">
           <FaGripHorizontal className="me-1 pb-1"></FaGripHorizontal>
           Categories
         </h3>
         <div>
           {categories.map((category) => (
             <Link to={`/courses/category/${category.id}`} key={category.id}>
-              <Button className="mb-2 w-100" variant="outline-dark">
+              <Button className="mb-2 w-100 pt-3 pb-3" variant="outline-dark">
                 {category.name}
               </Button>
             </Link>

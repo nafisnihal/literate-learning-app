@@ -4,13 +4,13 @@ import Button from "react-bootstrap/Button";
 import Card from "react-bootstrap/Card";
 import { Link } from "react-router-dom";
 
-const Course = ({course}) => {
-    console.log(course);
-    const {_id, title, image_url, details} = course;
+const Course = ({ course }) => {
+  // console.log(course);
+  const { _id, title, image_url, details } = course;
   return (
-    <Col className=" mb-5 " lg="4">
+    <Col className="mb-5" md="6" lg="4">
       <Card
-        className="bg-dark text-light border border-5 border-dark h-100"
+        className="bg-dark text-light border border-5 border-dark h-100 m-auto"
         style={{ width: "18rem" }}
       >
         <Card.Img
@@ -28,8 +28,11 @@ const Course = ({course}) => {
               details
             )}
           </Card.Text>
-          <Button variant="light">See Details</Button>
-          {/* <Link to={`/courses/course/${_id}`}>Read More</Link>{" "} */}
+          <Link to={`/courses/course/${_id}`}>
+            <Button className="w-100" variant="light">
+              See Details
+            </Button>
+          </Link>
         </Card.Body>
       </Card>
     </Col>

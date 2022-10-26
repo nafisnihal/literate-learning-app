@@ -6,14 +6,11 @@ import Course from './Course';
 const AllCourse = () => {
     const courses = useLoaderData();
     return (
-        <Row>
-            {
-                courses.map(course => <Course 
-                key = {course._id}
-                course = {course}
-                ></Course>)
-            }
-        </Row>
+      <Row className="">
+        {courses.map((course) => (
+          <Course key={course._id} course={course}></Course>
+        ))}
+      </Row>
     );
 };
 
