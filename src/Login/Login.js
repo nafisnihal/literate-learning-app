@@ -8,9 +8,23 @@ import { Link } from "react-router-dom";
 import { AuthContext } from "../contexts/AuthProvider";
 
 const Login = () => {
-  const { providerLogin } = useContext(AuthContext);
+  const { providerLogin, login } = useContext(AuthContext);
 
   const googleProvider = new GoogleAuthProvider();
+
+  const handleLogin = event =>{
+    event.preventDefault();
+    const form = event.target;
+    const email = form.email.value;
+    const password = form.password.value;
+
+    login(email, password)
+      .then((result) => {
+        const user = result.user;
+        console.log(user);
+      })
+      .catch((error) => console.error(error));
+  }
 
   const handleGoogleSignIn = () => {
     providerLogin(googleProvider)
@@ -23,15 +37,15 @@ const Login = () => {
 
   return (
     <div className="">
-      <Form className="w-50 mx-auto mt-5 bg-dark text-light rounded py-4 px-4">
+      <Form onSubmit={handleLogin} className="w-50 mx-auto mt-5 bg-dark text-light rounded py-4 px-4">
         <Form.Group className="mb-3" controlId="formBasicEmail">
           <Form.Label>Email</Form.Label>
-          <Form.Control type="email" placeholder="Enter email" />
+          <Form.Control name="email" type="email" placeholder="Enter email" required/>
         </Form.Group>
 
         <Form.Group className="mb-3" controlId="formBasicPassword">
           <Form.Label>Password</Form.Label>
-          <Form.Control type="password" placeholder="Password" />
+          <Form.Control name="password" type="password" placeholder="Password" required/>
         </Form.Group>
         <Form.Text className="text-danger d-block mb-3 ms-1">
           Error here
