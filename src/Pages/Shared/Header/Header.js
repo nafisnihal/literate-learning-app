@@ -14,7 +14,6 @@ const Header = () => {
       expand="lg"
       bg="dark"
       variant="dark"
-      sticky="top"
     >
       <Container>
         <Navbar.Brand className="m-0 p-0" href="#home">
