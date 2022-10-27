@@ -1,5 +1,5 @@
 import React from 'react';
-import { Col, Container, Row } from 'react-bootstrap';
+import { Button, Col, Container, Row } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import image from '../../../Assets/Images/logo.png';
 import {
@@ -9,15 +9,16 @@ import {
   FaTiktok,
   FaYoutube
 } from "react-icons/fa";
+import Form from "react-bootstrap/Form";
 
 const Footer = () => {
     return (
-      <div className="bg-dark p-5 text-light">
+      <div className="bg-dark py-5 text-light mt-5">
         <Container>
           <Row>
             <Col
-              lg="3"
-              className="d-flex flex-column align-items-start justify-content-center"
+              lg="4"
+              className="d-flex flex-column align-items-center justify-content-center"
             >
               <img src={image} alt="" srcset="" />
             </Col>
@@ -66,10 +67,24 @@ const Footer = () => {
                 <FaYoutube></FaYoutube>
                 <FaTiktok></FaTiktok>
               </div>
-              <p className='mt-5 mb-0'>Copyright:</p>
+              <p className="mt-5 mb-0">Copyright:</p>
               <p>©Literate Limited</p>
             </Col>
-            <Col lg="4"></Col>
+            <Col className="" lg="4">
+              <Form.Group
+                className="mb-3 d-flex flex-column justify-content-evenly h-100"
+                controlId="formBasicEmail"
+              >
+                <Form.Label>Subscribe our newsletter to get update.</Form.Label>
+                <Form.Control
+                className='rounded'
+                  name="email"
+                  type="email"
+                  placeholder="Enter email"
+                />
+                <Button variant="light">Subscribe</Button>
+              </Form.Group>
+            </Col>
           </Row>
         </Container>
       </div>

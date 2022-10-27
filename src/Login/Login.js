@@ -49,7 +49,7 @@ const Login = () => {
   };
 
   return (
-    <div className="">
+    <div className="mb-5">
       <Form
         onSubmit={handleLogin}
         className="w-50 mx-auto mt-5 bg-dark text-light rounded py-4 px-4"
@@ -105,4 +105,3 @@ const Login = () => {
 };
 
 export default Login;
-<h1>Login</h1>;
