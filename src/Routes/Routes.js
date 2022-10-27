@@ -29,19 +29,19 @@ export const routes = createBrowserRouter([
           {
             path: "/courses",
             element: <AllCourse></AllCourse>,
-            loader: () => fetch("http://localhost:5000/courses"),
+            loader: () => fetch("https://literate-server.vercel.app/courses"),
           },
           {
             path: "/courses/category/:id",
             element: <Category></Category>,
             loader: ({ params }) =>
-              fetch(`http://localhost:5000/category/${params.id}`),
+              fetch(`https://literate-server.vercel.app/category/${params.id}`),
           },
           {
             path: "/courses/course/:id",
             element: <CourseDetails></CourseDetails>,
             loader: ({ params }) =>
-              fetch(`http://localhost:5000/course/${params.id}`),
+              fetch(`https://literate-server.vercel.app/course/${params.id}`),
           },
         ],
       },
@@ -53,7 +53,7 @@ export const routes = createBrowserRouter([
           </PrivateRoute>
         ),
         loader: ({ params }) =>
-          fetch(`http://localhost:5000/course/${params.id}`),
+          fetch(`https://literate-server.vercel.app/course/${params.id}`),
       },
       {
         path: "/login",
