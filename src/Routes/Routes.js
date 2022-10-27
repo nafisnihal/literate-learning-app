@@ -4,6 +4,7 @@ import Login from "../Login/Login";
 import Register from "../Login/Register";
 import Blog from "../Others/Blog";
 import FAQ from "../Others/FAQ";
+import NotFound from "../Others/NotFound";
 import Category from "../Pages/Category/Category";
 import AllCourse from "../Pages/Courses/AllCourse";
 import Checkout from "../Pages/Courses/Checkout";
@@ -63,13 +64,17 @@ export const routes = createBrowserRouter([
         element: <Register></Register>,
       },
       {
-        path: '/faq',
-        element: <FAQ></FAQ>
+        path: "/faq",
+        element: <FAQ></FAQ>,
       },
       {
-        path: '/blog',
-        element: <Blog></Blog>
-      }
+        path: "/blog",
+        element: <Blog></Blog>,
+      },
     ],
+  },
+  {
+    path: "*",
+    element: <NotFound></NotFound>,
   },
 ]);
