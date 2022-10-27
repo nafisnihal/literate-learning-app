@@ -58,10 +58,10 @@ const Header = () => {
             >
               COURSES
             </Link>
-            <Link className="text-decoration-none me-lg-3 text-light mt-3 mt-lg-0 text-end">
+            <Link className="text-decoration-none me-lg-3 text-light mt-3 mt-lg-0 text-end" to='/faq'>
               FAQ
             </Link>
-            <Link className="text-decoration-none text-light mt-3 mt-lg-0 text-end">
+            <Link className="text-decoration-none text-light mt-3 mt-lg-0 text-end" to='/blog'>
               BLOG
             </Link>
           </Nav>
