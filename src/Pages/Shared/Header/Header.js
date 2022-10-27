@@ -11,16 +11,22 @@ import { FaUserAlt } from "react-icons/fa";
 import { HiOutlineChevronDoubleRight } from "react-icons/hi";
 import Overlay from "react-bootstrap/Overlay";
 import Tooltip from "react-bootstrap/Tooltip";
+import { HiLightBulb } from "react-icons/hi";
 
 const Header = () => {
   const { user, logOut } = useContext(AuthContext);
   const [show, setShow] = useState(false);
   const target = useRef(null);
+  const [light, setLight] = useState(true);
 
   const handleLogOut = () => {
     logOut()
       .then(() => {})
       .catch((error) => console.error(error));
+  };
+
+  const handleLight = () => {
+    light ? setLight(false) : setLight(true);
   };
 
   return (
@@ -60,6 +66,29 @@ const Header = () => {
             </Link>
           </Nav>
           <Nav className="d-sm-flex justify-content-end">
+            <Nav>
+              {light ? (
+                <>
+                  <Button
+                    onClick={handleLight}
+                    variant="dark"
+                    className="fs-5 border-0 m-0 pt-0 px-1"
+                  >
+                    <HiLightBulb></HiLightBulb>
+                  </Button>
+                </>
+              ) : (
+                <>
+                  <Button
+                    onClick={handleLight}
+                    variant="light"
+                    className="fs-5 border-0 m-0 pt-0 px-1"
+                  >
+                    <HiLightBulb></HiLightBulb>
+                  </Button>
+                </>
+              )}
+            </Nav>
             {user?.photoURL ? (
               <>
                 <Image

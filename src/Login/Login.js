@@ -50,20 +50,33 @@ const Login = () => {
 
   return (
     <div className="">
-      <Form onSubmit={handleLogin} className="w-50 mx-auto mt-5 bg-dark text-light rounded py-4 px-4">
+      <Form
+        onSubmit={handleLogin}
+        className="w-50 mx-auto mt-5 bg-dark text-light rounded py-4 px-4"
+      >
         <Form.Group className="mb-3" controlId="formBasicEmail">
           <Form.Label>Email</Form.Label>
-          <Form.Control name="email" type="email" placeholder="Enter email" required/>
+          <Form.Control
+            name="email"
+            type="email"
+            placeholder="Enter email"
+            required
+          />
         </Form.Group>
 
         <Form.Group className="mb-3" controlId="formBasicPassword">
           <Form.Label>Password</Form.Label>
-          <Form.Control name="password" type="password" placeholder="Password" required/>
+          <Form.Control
+            name="password"
+            type="password"
+            placeholder="Password"
+            required
+          />
         </Form.Group>
         <Form.Text className="text-danger d-block mb-3 ms-1">
-          {error ? <p>Wrong credential, please check again.</p> : ''}
+          {error ? <p>Wrong credential, please check again.</p> : ""}
         </Form.Text>
-        <Button variant="light" type="submit">
+        <Button className='mt-2' variant="light" type="submit">
           Login
         </Button>
         <Form.Text className="text-secondary d-block mt-4 text-center">
@@ -72,20 +85,21 @@ const Login = () => {
             Create an account
           </Link>
         </Form.Text>
+        <hr />
+        <div className="w-75 mx-auto mt-1 bg-dark text-light rounded pt-1 px-4">
+          <Button
+            onClick={handleGoogleSignIn}
+            className="w-100"
+            variant="light"
+            type="submit"
+          >
+            Continue with Google <FaGoogle className="mb-1 ms-1"></FaGoogle>
+          </Button>
+          <Button className="w-100 mt-2" variant="light" type="submit">
+            Continue with GitHub <FaGithub className="mb-1 ms-1"></FaGithub>
+          </Button>
+        </div>
       </Form>
-      <div className="w-50 mx-auto mt-1 bg-dark text-light rounded py-4 px-4">
-        <Button
-          onClick={handleGoogleSignIn}
-          className="w-100"
-          variant="light"
-          type="submit"
-        >
-          Continue with Google <FaGoogle className="mb-1 ms-1"></FaGoogle>
-        </Button>
-        <Button className="w-100 mt-2" variant="light" type="submit">
-          Continue with GitHub <FaGithub className="mb-1 ms-1"></FaGithub>
-        </Button>
-      </div>
     </div>
   );
 };

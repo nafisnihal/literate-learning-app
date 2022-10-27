@@ -4,22 +4,35 @@ import Button from "react-bootstrap/Button";
 import Card from "react-bootstrap/Card";
 import { FaStar } from "react-icons/fa";
 
+const ref = React.createRef();
+
 const CourseDetails = () => {
   const courseDetails = useLoaderData();
   const { _id, title, image_url, details } = courseDetails;
+
   return (
     <div className="w-75 mx-auto">
       <Card className="text-center">
-        <Card.Img className="img-fluid" variant="top" src={image_url} />
-        <Card.Body>
-          <Card.Title>{title}</Card.Title>
-          <Card.Text>{details}</Card.Text>
-          <Link to={`/checkout/${_id}`}>
-            <Button variant="dark">
-              <FaStar className="pb-1"></FaStar> Get Premium Access
-            </Button>
-          </Link>
-        </Card.Body>
+        <Card.Header className="d-flex justify-content-between">
+          <Button variant="dark" disabled>
+            Price: $99
+          </Button>
+          <Button variant="dark">
+            Download Course Outline
+          </Button>
+        </Card.Header>
+        <div ref={ref}>
+          <Card.Img className="img-fluid" variant="top" src={image_url} />
+          <Card.Body>
+            <Card.Title>{title}</Card.Title>
+            <Card.Text>{details}</Card.Text>
+            <Link to={`/checkout/${_id}`}>
+              <Button variant="dark">
+                <FaStar className="pb-1"></FaStar> Get Premium Access
+              </Button>
+            </Link>
+          </Card.Body>
+        </div>
       </Card>
     </div>
   );

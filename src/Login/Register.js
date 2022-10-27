@@ -91,7 +91,7 @@ const Register = () => {
           <Form.Text className="text-danger d-block mb-3 ms-1">
             {error}
           </Form.Text>
-          <Button variant="light" type="submit">
+          <Button className="mt-2" variant="light" type="submit">
             Register
           </Button>
           <Form.Text className="text-secondary d-block mt-4 text-center">
