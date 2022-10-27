@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useRef, useState } from "react";
 import { useContext } from "react";
 import { Button, Image } from "react-bootstrap";
 import Container from "react-bootstrap/Container";
@@ -9,9 +9,13 @@ import logo from "../../../Assets/Images/logo.png";
 import { AuthContext } from "../../../contexts/AuthProvider";
 import { FaUserAlt } from "react-icons/fa";
 import { HiOutlineChevronDoubleRight } from "react-icons/hi";
+import Overlay from "react-bootstrap/Overlay";
+import Tooltip from "react-bootstrap/Tooltip";
 
 const Header = () => {
   const { user, logOut } = useContext(AuthContext);
+  const [show, setShow] = useState(false);
+  const target = useRef(null);
 
   const handleLogOut = () => {
     logOut()
@@ -57,13 +61,24 @@ const Header = () => {
           </Nav>
           <Nav className="d-sm-flex justify-content-end">
             {user?.photoURL ? (
-              <Image
-                className="mx-2 my-auto"
-                style={{ height: "30px" }}
-                rounded
-                fluid
-                src={user?.photoURL}
-              ></Image>
+              <>
+                <Image
+                  ref={target}
+                  onMouseEnter={() => setShow(!show)}
+                  className="mx-2 my-auto"
+                  style={{ height: "30px" }}
+                  rounded
+                  fluid
+                  src={user?.photoURL}
+                ></Image>
+                <Overlay target={target.current} show={show} placement="bottom">
+                  {(props) => (
+                    <Tooltip id="overlay-example" {...props}>
+                      {user?.displayName}
+                    </Tooltip>
+                  )}
+                </Overlay>
+              </>
             ) : (
               <FaUserAlt className="text-light mx-2 my-auto p-1 fs-2 border rounded"></FaUserAlt>
             )}
