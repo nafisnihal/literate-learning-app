@@ -58,64 +58,79 @@ const Header = () => {
             >
               COURSES
             </Link>
-            <Link className="text-decoration-none me-lg-3 text-light mt-3 mt-lg-0 text-end" to='/faq'>
+            <Link
+              className="text-decoration-none me-lg-3 text-light mt-3 mt-lg-0 text-end"
+              to="/faq"
+            >
               FAQ
             </Link>
-            <Link className="text-decoration-none text-light mt-3 mt-lg-0 text-end" to='/blog'>
+            <Link
+              className="text-decoration-none text-light mt-3 mt-lg-0 text-end"
+              to="/blog"
+            >
               BLOG
             </Link>
           </Nav>
-          <Nav className="d-sm-flex justify-content-end">
-            <Nav>
-              {light ? (
-                <>
-                  <Button
-                    onClick={handleLight}
-                    variant="dark"
-                    className="fs-5 border-0 m-0 pt-0 px-1"
-                  >
-                    <HiLightBulb></HiLightBulb>
-                  </Button>
-                </>
-              ) : (
-                <>
-                  <Button
-                    onClick={handleLight}
-                    variant="light"
-                    className="fs-5 border-0 m-0 pt-0 px-1"
-                  >
-                    <HiLightBulb></HiLightBulb>
-                  </Button>
-                </>
-              )}
-            </Nav>
-            {user?.photoURL ? (
+          <Nav className="d-flex justify-content-center align-items-end">
+            {light ? (
               <>
-                <Image
-                  ref={target}
-                  onMouseEnter={() => setShow(!show)}
-                  className="mx-2 my-auto"
-                  style={{ height: "30px" }}
-                  rounded
-                  fluid
-                  src={user?.photoURL}
-                ></Image>
-                <Overlay target={target.current} show={show} placement="bottom">
-                  {(props) => (
-                    <Tooltip id="overlay-example" {...props}>
-                      {user?.displayName}
-                    </Tooltip>
-                  )}
-                </Overlay>
+                <Button
+                  onClick={handleLight}
+                  variant="dark"
+                  className="fs-5 pt-0 mt-4 mb-2 me-lg-2 my-lg-0"
+                >
+                  <HiLightBulb></HiLightBulb>
+                </Button>
               </>
             ) : (
-              <FaUserAlt className="text-light mx-2 my-auto p-1 fs-2 border rounded"></FaUserAlt>
+              <>
+                <Button
+                  onClick={handleLight}
+                  variant="light"
+                  className="fs-5 pt-0 mt-4 mb-2 me-lg-2 my-lg-0"
+                >
+                  <HiLightBulb></HiLightBulb>
+                </Button>
+              </>
             )}
+
             {user?.uid ? (
-              <Button onClick={handleLogOut} variant="light">
-                Logout{" "}
-                <HiOutlineChevronDoubleRight></HiOutlineChevronDoubleRight>
-              </Button>
+              <>
+                {user?.photoURL ? (
+                  <>
+                    <Image
+                      ref={target}
+                      onMouseEnter={() => setShow(!show)}
+                      className="mx-lg-2 my-2 my-lg-auto"
+                      style={{ height: "40px" }}
+                      rounded
+                      fluid
+                      src={user?.photoURL}
+                    ></Image>
+                    <Overlay
+                      target={target.current}
+                      show={show}
+                      placement="bottom"
+                    >
+                      {(props) => (
+                        <Tooltip id="overlay-example" {...props}>
+                          {user?.displayName}
+                        </Tooltip>
+                      )}
+                    </Overlay>
+                  </>
+                ) : (
+                  <FaUserAlt className="text-light me-lg-2 my-2 my-lg-auto p-1 fs-2 border rounded"></FaUserAlt>
+                )}
+                <Button
+                  onClick={handleLogOut}
+                  variant="light"
+                  className="my-2 m-lg-0"
+                >
+                  Logout{" "}
+                  <HiOutlineChevronDoubleRight></HiOutlineChevronDoubleRight>
+                </Button>
+              </>
             ) : (
               <>
                 <Link to="/login">

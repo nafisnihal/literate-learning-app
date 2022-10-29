@@ -50,14 +50,14 @@ const Login = () => {
 
   return (
     <div className="mb-5">
-      <div className="w-50 mx-auto mt-5 bg-dark text-light rounded py-4 px-4">
+      <div className="w-75 mx-auto mt-5 bg-dark text-light rounded py-4 px-4">
         <Form onSubmit={handleLogin}>
           <Form.Group className="mb-3" controlId="formBasicEmail">
             <Form.Label>Email</Form.Label>
             <Form.Control
               name="email"
               type="email"
-              placeholder="Enter email"
+              placeholder="email"
               required
             />
           </Form.Group>
@@ -67,7 +67,7 @@ const Login = () => {
             <Form.Control
               name="password"
               type="password"
-              placeholder="Password"
+              placeholder="password"
               required
             />
           </Form.Group>
@@ -84,18 +84,28 @@ const Login = () => {
             </Link>
           </Form.Text>
         </Form>
-        <hr />
-        <div className="w-75 mx-auto mt-1 bg-dark text-light rounded pt-1 px-4">
+        <div className="row mt-4 w-75 mx-auto">
+          <hr className="mt-3 col-5" />
+          <p className="text-center col-2">Or</p>
+          <hr className="mt-3 col-5" />
+        </div>
+        <div className="text-center mx-auto mt-1 bg-dark text-light rounded pt-1 px-4">
           <Button
             onClick={handleGoogleSignIn}
-            className="w-100"
+            className=""
             variant="light"
             type="submit"
           >
-            Continue with Google <FaGoogle className="mb-1 ms-1"></FaGoogle>
+            <p className="d-none d-md-inline d-lg-inline">
+              Continue with Google
+            </p>{" "}
+            <FaGoogle className="mb-1 ms-1"></FaGoogle>
           </Button>
-          <Button className="w-100 mt-2" variant="light" type="submit">
-            Continue with GitHub <FaGithub className="mb-1 ms-1"></FaGithub>
+          <Button className="ms-2" variant="light" type="submit">
+            <p className="d-none d-md-inline d-lg-inline">
+              Continue with GitHub
+            </p>{" "}
+            <FaGithub className="mb-1 ms-1"></FaGithub>
           </Button>
         </div>
       </div>
