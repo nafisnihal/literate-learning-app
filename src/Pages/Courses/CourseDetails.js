@@ -13,9 +13,6 @@ const CourseDetails = () => {
   return (
     <div className="w-75 mx-auto">
       <Card className="text-center">
-        <Card.Header className="d-flex justify-content-end">
-          <Button variant="dark">Download Course Outline</Button>
-        </Card.Header>
         <div ref={ref}>
           <Card.Img className="img-fluid" variant="top" src={image_url} />
           <Card.Body>

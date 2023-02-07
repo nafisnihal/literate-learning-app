@@ -3,49 +3,60 @@ import Accordion from "react-bootstrap/Accordion";
 
 const FAQ = () => {
     return (
-      <div className='w-75 mx-auto'>
-        <h3 className='w-50 mx-auto text-center text-light py-4 my-4 bg-dark'>Frequently Asked Questions</h3>
-        <Accordion defaultActiveKey="0" flush>
+      <div className="w-75 mx-auto my-5">
+        <h3 className="w-50 mx-auto text-center text-light py-4 my-5 bg-dark">
+          Frequently Asked Questions
+        </h3>
+        <Accordion flush>
           <Accordion.Item eventKey="0">
-            <Accordion.Header> Lorem ipsum dolor sit, amet consectetur adipisicing elit. Reprehenderit, eos! </Accordion.Header>
+            <Accordion.Header>Can I Enroll Multiple Courses ?</Accordion.Header>
             <Accordion.Body>
-              Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quae, veniam. Suscipit, voluptatibus! Ipsum iusto corporis voluptate nesciunt! Hic quae optio ex ullam sit corrupti molestiae perferendis odit distinctio, praesentium dolores!
+              Yes. You can enroll as many courses as you like.
             </Accordion.Body>
           </Accordion.Item>
           <Accordion.Item eventKey="1">
-            <Accordion.Header> Lorem ipsum dolor sit amet consectetur adipisicing elit. Eum, delectus? </Accordion.Header>
+            <Accordion.Header>How Can I Use My Newsletters ?</Accordion.Header>
             <Accordion.Body>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-              eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
-              enim ad minim veniam, quis nostrud exercitation ullamco laboris
-              nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in
-              reprehenderit in voluptate velit esse cillum dolore eu fugiat
-              nulla pariatur. Excepteur sint occaecat cupidatat non proident,
-              sunt in culpa qui officia deserunt mollit anim id est laborum.
+              You will receive newsletters about courses. There are the “Course
+              of the week”, “Courses Spotlight Instructor dedicated email”, “Hot
+              List and Now Submitting Email” and an other one “About our
+              Association”. You are highly recommended to choose your prefer
+              course among these newsletters. You can follow the news on Crayon
+              Magique. You should buy and enroll these courses easily to improve
+              your skills.
             </Accordion.Body>
           </Accordion.Item>
           <Accordion.Item eventKey="2">
-            <Accordion.Header> Lorem ipsum dolor sit amet consectetur, adipisicing elit. Eveniet, at! </Accordion.Header>
+            <Accordion.Header>
+              Is online education as effective as face-to-face instruction?
+            </Accordion.Header>
             <Accordion.Body>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-              eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
-              enim ad minim veniam, quis nostrud exercitation ullamco laboris
-              nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in
-              reprehenderit in voluptate velit esse cillum dolore eu fugiat
-              nulla pariatur. Excepteur sint occaecat cupidatat non proident,
-              sunt in culpa qui officia deserunt mollit anim id est laborum.
+              Online education may seem relatively new, but years of research
+              suggests it can be just as effective as traditional coursework,
+              and often more so. According to a U.S. Department of Education
+              analysis of more than 1,000 learning studies, online students tend
+              to outperform classroom-based students across most disciplines and
+              demographics. Another major review published the same year found
+              that online students had the advantage 70 percent of the time, a
+              gap authors projected would only widen as programs and
+              technologies evolve.
             </Accordion.Body>
           </Accordion.Item>
           <Accordion.Item eventKey="3">
-            <Accordion.Header> Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi, sint. </Accordion.Header>
+            <Accordion.Header>
+              What technical skills do online students need?
+            </Accordion.Header>
             <Accordion.Body>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-              eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
-              enim ad minim veniam, quis nostrud exercitation ullamco laboris
-              nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in
-              reprehenderit in voluptate velit esse cillum dolore eu fugiat
-              nulla pariatur. Excepteur sint occaecat cupidatat non proident,
-              sunt in culpa qui officia deserunt mollit anim id est laborum.
+              Online learning platforms are typically designed to be as
+              user-friendly as possible: intuitive controls, clear instructions,
+              and tutorials guide students through new tasks. However, students
+              still need basic computer skills to access and navigate these
+              programs. These skills include: using a keyboard and a mouse;
+              running computer programs; using the Internet; sending and
+              receiving email; using word processing programs; and using forums
+              and other collaborative tools. Most online programs publish such
+              requirements on their websites. If not, an admissions adviser can
+              help.
             </Accordion.Body>
           </Accordion.Item>
         </Accordion>

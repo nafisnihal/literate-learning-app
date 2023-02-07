@@ -7,7 +7,7 @@ const NotFound = () => {
           <h1 className="mx-5 ">Ops Ops...</h1>
           <h3 className="my-5">
             The page you are looking for may have been removed, deleted or
-            probably never existed.{" "}
+            probably never existed.
           </h3>
           <h1 className="fs-1 fw-bold my-5">404</h1>
         </div>

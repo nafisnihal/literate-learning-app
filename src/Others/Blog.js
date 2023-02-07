@@ -1,5 +1,5 @@
 import React from 'react';
-import Accordion from "react-bootstrap/Accordion";
+import Card from "react-bootstrap/Card";
 
 
 const Blog = () => {
@@ -8,10 +8,10 @@ const Blog = () => {
         <h3 className="w-50 mx-auto text-center text-light py-4 my-4 bg-dark">
           Blogs
         </h3>
-        <Accordion defaultActiveKey="0" flush>
-          <Accordion.Item eventKey="0">
-            <Accordion.Header>What is cors?</Accordion.Header>
-            <Accordion.Body>
+        <Card className="my-5">
+          <Card.Body>
+            <Card.Title>What is cors?</Card.Title>
+            <Card.Text>
               Cross-Origin Resource Sharing (CORS) is an HTTP-header based
               mechanism that allows a server to indicate any origins (domain,
               scheme, or port) other than its own from which a browser should
@@ -21,37 +21,38 @@ const Blog = () => {
               permit the actual request. In that preflight, the browser sends
               headers that indicate the HTTP method and headers that will be
               used in the actual request.
-            </Accordion.Body>
-          </Accordion.Item>
-          <Accordion.Item eventKey="1">
-            <Accordion.Header>
+            </Card.Text>
+          </Card.Body>
+        </Card>
+        <Card className="my-5">
+          <Card.Body>
+            <Card.Title>
               Why are you using firebase? What other options do you have to
               implement authentication?
-            </Accordion.Header>
-            <Accordion.Body>
+            </Card.Title>
+            <Card.Text>
               Firebase is secure and trusted authentication provider. I also can
               implement authentication by OAuth, implementing own authentication
               on backend, etc.
-            </Accordion.Body>
-          </Accordion.Item>
-          <Accordion.Item eventKey="2">
-            <Accordion.Header>
-              How does the private route work?
-            </Accordion.Header>
-            <Accordion.Body>
+            </Card.Text>
+          </Card.Body>
+        </Card>
+        <Card className="my-5">
+          <Card.Body>
+            <Card.Title>How does the private route work?</Card.Title>
+            <Card.Text>
               The private route component is similar to the public route, the
               only change is that redirect URL and authenticate condition. If
               the user is not authenticated he will be redirected to the login
               page and the user can only access the authenticated routes If he
               is authenticated (Logged in).
-            </Accordion.Body>
-          </Accordion.Item>
-          <Accordion.Item eventKey="3">
-            <Accordion.Header>
-              What is Node? How does Node work?
-            </Accordion.Header>
-            <Accordion.Body>
-              Node.js is an open-source backend javascript runtime environment.
+            </Card.Text>
+          </Card.Body>
+        </Card>
+        <Card className="my-5">
+          <Card.Body>
+            <Card.Title>What is Node? How does Node work?</Card.Title>
+            <Card.Text> Node.js is an open-source backend javascript runtime environment.
               It is a used as backend service where javascript works on the
               server-side of the application. This way javascript is used on
               both frontend and backend. Node.js runs on chrome v8 engine which
@@ -65,9 +66,9 @@ const Blog = () => {
               clients. Node.js is an event loop single-threaded language. It can
               handle concurrent requests with a single thread without blocking
               it for one request.
-            </Accordion.Body>
-          </Accordion.Item>
-        </Accordion>
+            </Card.Text>
+          </Card.Body>
+        </Card>
       </div>
     );
 };
