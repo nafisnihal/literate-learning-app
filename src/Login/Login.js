@@ -1,15 +1,15 @@
-import { GoogleAuthProvider } from "firebase/auth";
-import React from "react";
-import { useState } from "react";
-import { useContext } from "react";
-import Button from "react-bootstrap/Button";
-import Form from "react-bootstrap/Form";
-import { FaGoogle } from "react-icons/fa";
-import { Link, useLocation, useNavigate } from "react-router-dom";
-import { AuthContext } from "../contexts/AuthProvider";
+import { GoogleAuthProvider } from 'firebase/auth';
+import React from 'react';
+import { useState } from 'react';
+import { useContext } from 'react';
+import Button from 'react-bootstrap/Button';
+import Form from 'react-bootstrap/Form';
+import { FaGoogle } from 'react-icons/fa';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
+import { AuthContext } from '../contexts/AuthProvider';
 
 const Login = () => {
-    const [error, setError] = useState('');
+  const [error, setError] = useState('');
   const { providerLogin, login } = useContext(AuthContext);
   const navigate = useNavigate();
   const location = useLocation();
@@ -18,7 +18,7 @@ const Login = () => {
 
   const googleProvider = new GoogleAuthProvider();
 
-  const handleLogin = event =>{
+  const handleLogin = (event) => {
     event.preventDefault();
     const form = event.target;
     const email = form.email.value;
@@ -30,13 +30,13 @@ const Login = () => {
         console.log(user);
         form.reset();
         setError('');
-        navigate(from, {replace: true});
+        navigate(from, { replace: true });
       })
       .catch((error) => {
         console.error(error);
         setError(error.message);
-    });
-  }
+      });
+  };
 
   const handleGoogleSignIn = () => {
     providerLogin(googleProvider)
@@ -49,8 +49,8 @@ const Login = () => {
   };
 
   return (
-    <div className="mb-5">
-      <div className="w-50 mx-auto mt-5 bg-dark text-light rounded py-4 px-4">
+    <div style={{ maxWidth: '500px' }} className="mx-auto px-4">
+      <div className="w-100 mx-auto my-5 bg-dark text-light rounded py-4 px-4">
         <Form onSubmit={handleLogin}>
           <Form.Group className="mb-3" controlId="formBasicEmail">
             <Form.Label>Email</Form.Label>
@@ -72,13 +72,13 @@ const Login = () => {
             />
           </Form.Group>
           <Form.Text className="text-danger d-block mb-3 ms-1">
-            {error ? <p>Wrong credential, please check again.</p> : ""}
+            {error ? <p>Wrong credential, please check again.</p> : ''}
           </Form.Text>
-          <Button className="mt-2" variant="light" type="submit">
+          <Button className="mt-3 w-100" variant="light" type="submit">
             Login
           </Button>
           <Form.Text className="text-secondary d-block mt-4 text-center">
-            Don't have an account?{" "}
+            Don't have an account?{' '}
             <Link className="text-decoration-none text-light" to="/register">
               Create an account
             </Link>
@@ -98,7 +98,7 @@ const Login = () => {
           >
             <p className="d-none d-md-inline d-lg-inline">
               Continue with Google
-            </p>{" "}
+            </p>{' '}
             <FaGoogle className="mb-1 ms-1"></FaGoogle>
           </Button>
         </div>

@@ -1,16 +1,16 @@
-import React from "react";
-import { useEffect } from "react";
-import { useState } from "react";
-import { Link } from "react-router-dom";
-import Button from "react-bootstrap/Button";
-import { FaGripHorizontal } from "react-icons/fa";
-import Accordion from "react-bootstrap/Accordion";
+import React from 'react';
+import { useEffect } from 'react';
+import { useState } from 'react';
+import { Link } from 'react-router-dom';
+import Button from 'react-bootstrap/Button';
+import { FaGripHorizontal } from 'react-icons/fa';
+import Accordion from 'react-bootstrap/Accordion';
 
 const SideNav = () => {
   const [categories, setCategories] = useState([]);
 
   useEffect(() => {
-    fetch("https://literate-server.vercel.app/course-categories")
+    fetch('https://literate-server.vercel.app/course-categories')
       .then((res) => res.json())
       .then((data) => setCategories(data));
   }, []);
@@ -18,7 +18,7 @@ const SideNav = () => {
   return (
     <div className="mb-5">
       <div className="d-none d-lg-block">
-        <h3 className="text-center text-light border rounded border-dark p-4 w-auto mb-3 bg-dark">
+        <h3 className="text-center text-light border rounded border-dark p-2 w-auto mb-3 bg-dark">
           <FaGripHorizontal className="me-1 pb-1"></FaGripHorizontal>
           Categories
         </h3>
